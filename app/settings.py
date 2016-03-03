@@ -105,12 +105,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Rest Framework
-REST_FRAMEWORD = {
+REST_FRAMEWORK = {
     # Use Django's standart 'django.contrib.auth' permissions,
     # or allow read-only access for unathenticated users.
-    'DEFAULT_PERMISSION_CLASSES' : [
-        'rest_framework.permissions.DjangoModelPermisssionsOrANonReadOnly'
-    ]
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+    'PAGE_SIZE': 10,
 }
 
 # Internationalization
