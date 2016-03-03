@@ -19,29 +19,16 @@ from rest_framework import routers, serializers, viewsets
 from django.contrib import admin
 
 
-from snippets.models import Snippet
-from snippets.serializers import SnippetSerializer
 
-
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ('url', 'username', 'email', 'is_staff')
-
+from snippets.serializers import SnippetSerializer, UserSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-
-class SnippetViewSet(viewsets.ModelViewSet):
-    queryset = Snippet.objects.all()
-    serializer_class = SnippetSerializer
-
-
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
-router.register(r'snippets', SnippetViewSet)
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
