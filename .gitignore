@@ -1,3 +1,4 @@
 .idea/*
+snippets/migrations/*
 db.sqlite3
 *.pyc
