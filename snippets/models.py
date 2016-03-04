@@ -38,3 +38,9 @@ class Snippet(models.Model):
         formatter = HtmlFormatter(style=self.style, linenos=linenos, full=True, **options)
         self.highlighted = highlight(self.code, lexer, formatter)
         super(Snippet, self).save(*args, **kwargs)
+
+    def __repr__(self):
+        return "<Snippet title:{}>".format(self.title)
+
+    def __str__(self):
+        return "<Snippet title:'{}', code:'{}'>".format(self.title, self.code)
