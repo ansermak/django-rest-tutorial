@@ -24,7 +24,7 @@ router.register(r'snippets', views.SnippetViewSet)
 router.register(r'users', views.UserViewSet)
 
 urlpatterns = [
-    url(r'^', include('snippets.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^', include(router.urls)),
 ]
